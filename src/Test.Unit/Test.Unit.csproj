@@ -110,6 +110,10 @@
     <PostBuildEvent>xcopy /e  "$(SolutionDir)fixture" "$(SolutionDir)src\Test.Unit\bin\Debug\Fixtures"
 </PostBuildEvent>
   </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>IF EXIST  "$(SolutionDir)src\Test.Unit\bin\Debug\Fixtures\src" RD /S /Q "$(SolutionDir)src\Test.Unit\bin\Debug\Fixtures\src" 
+</PreBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

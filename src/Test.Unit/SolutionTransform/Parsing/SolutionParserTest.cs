@@ -38,5 +38,16 @@ namespace Test.Unit.SolutionTransform.Parsing
             var solution = Parser.ParseFile(SolutionPath);
             Assert.IsTrue(solution.Projects.Count > 0);
         }
+
+        [Test]
+        public void ParseFile_sets_assembly_and_namespace_info_on_Projects()
+        {
+            var solution = Parser.ParseFile(SolutionPath);
+            foreach (var project in solution.Projects)
+            {
+                Assert.IsNotNull(project.AssemblyName);
+                Assert.IsNotNull(project.RootNamespace);
+            }
+        }
     }
 }
