@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="GithubClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QueryNotFoundException.cs" />
     <Compile Include="Query\GetTagCollection.cs" />
     <Compile Include="Query\QueryBase.cs" />
   </ItemGroup>
