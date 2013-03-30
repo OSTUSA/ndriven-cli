@@ -1,6 +1,8 @@
-﻿using System.IO;
+﻿using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
+using System.Xml.Linq;
 using SolutionTransform.Model;
 
 namespace SolutionTransform.Parsing
@@ -29,11 +31,38 @@ namespace SolutionTransform.Parsing
         {
             using (var reader = new StreamReader(path))
             {
-                var contents = reader.ReadToEnd();
-                var matches = ProjectPattern.Matches(contents);
+                var matches = ProjectPattern.Matches(reader.ReadToEnd());
                 foreach (var project in from Match match in matches select new Project(match.Groups["name"].Value, match.Groups["path"].Value))
+                {
+                    if (!project.Path.Contains("proj"))
+                        project.IsSolutionFolder = true;
                     solution.Projects.Add(project);
+                } 
             }
+            SetProjectAssemblyAndNamespace(path, solution.Projects);
+        }
+
+        private static void SetProjectAssemblyAndNamespace(string path, IEnumerable<Project> projects)
+        {
+            var slnDir = new FileInfo(path).Directory;
+            foreach (var p in projects)
+            {
+                var csproj = slnDir.FullName + Path.DirectorySeparatorChar + p.Path;
+                if (!File.Exists(csproj)) continue;
+                SetAssemblyAndNamsepace(csproj, p);
+            }
+        }
+
+        private static void SetAssemblyAndNamsepace(string projPath, Project project)
+        {
+            var data = XDocument.Load(projPath).Descendants()
+                .Descendants()
+                .Where(d => d.Name.LocalName == "PropertyGroup")
+                .Descendants()
+                .Where(x => x.Name.LocalName == "AssemblyName" || x.Name.LocalName == "RootNamespace")
+                .Select(d => d.Value);
+            project.RootNamespace = data.ElementAt(0).ToString();
+            project.AssemblyName = data.ElementAt(1).ToString();
         }
     }
 }

@@ -4,6 +4,7 @@
     {
         public string Name { get; set; }
         public string Path { get; set; }
+        public bool IsSolutionFolder { get; set; }
         public string RootNamespace { get; set; }
         public string AssemblyName { get; set; }
 

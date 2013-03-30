@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using System.Linq;
 using NUnit.Framework;
 using SolutionTransform.Parsing;
 
@@ -43,9 +44,10 @@ namespace Test.Unit.SolutionTransform.Parsing
         public void ParseFile_sets_assembly_and_namespace_info_on_Projects()
         {
             var solution = Parser.ParseFile(SolutionPath);
-            foreach (var project in solution.Projects)
+            var valid = solution.Projects.Where(p => p.IsSolutionFolder != true);
+            foreach (var project in valid)
             {
-                Assert.IsNotNull(project.AssemblyName);
+                Assert.IsNotNull(project.AssemblyName, project.Name);
                 Assert.IsNotNull(project.RootNamespace);
             }
         }
