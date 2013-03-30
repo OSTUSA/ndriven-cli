@@ -16,7 +16,7 @@ namespace Github.Client
             Uri = new Uri("https://api.github.com");
         }
 
-        public async Task<TModel> Query<TModel>(object prams) where TModel : IGithubModel, new()
+        public async Task<TModel> QueryAsync<TModel>(object prams) where TModel : IGithubModel, new()
         {
             var query = GetQuery<TModel>(prams);
             if (query == null)

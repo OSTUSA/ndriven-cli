@@ -19,7 +19,7 @@ namespace Test.Integration.Github.Client
         [Test]
         public async void Query_should_return_Task_for_TagCollection()
         {
-            var getTags = Client.Query<TagCollection>(new {owner = "OSTUSA", repo = "ndriven"});
+            var getTags = Client.QueryAsync<TagCollection>(new {owner = "OSTUSA", repo = "ndriven"});
             Assert.IsInstanceOf<Task<TagCollection>>(getTags);
             var tags = await getTags;
             Assert.IsInstanceOf<TagCollection>(tags);

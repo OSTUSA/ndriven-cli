@@ -45,7 +45,7 @@ namespace Test.Unit.Github.Client
         public async void Query_should_throw_exception_if_query_command_not_found()
         {
             var tparams = new { owner = "OSTUSA", repo = "ndriven" };
-            var result = await Client.Query<Commit>(tparams);            
+            var result = await Client.QueryAsync<Commit>(tparams);            
         }
     }
 }

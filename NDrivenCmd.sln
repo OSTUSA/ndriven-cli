@@ -9,8 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Github.Client", "src\Github
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Integration", "src\Test.Integration\Test.Integration.csproj", "{63F9927E-9871-4793-AAAA-B8944F06CE33}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NDriven.Console", "src\NDriven.Console\NDriven.Console.csproj", "{1E5D89D7-B646-4430-84E5-B6ED64AC9338}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,10 +31,6 @@ Global
 		{63F9927E-9871-4793-AAAA-B8944F06CE33}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{63F9927E-9871-4793-AAAA-B8944F06CE33}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{63F9927E-9871-4793-AAAA-B8944F06CE33}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1E5D89D7-B646-4430-84E5-B6ED64AC9338}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1E5D89D7-B646-4430-84E5-B6ED64AC9338}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1E5D89D7-B646-4430-84E5-B6ED64AC9338}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1E5D89D7-B646-4430-84E5-B6ED64AC9338}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
