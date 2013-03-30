@@ -19,7 +19,7 @@ namespace Github.Client.Query
             Template = new UriTemplate(templateString);
         }
 
-        public async Task<TModel> RequestAsync(Uri prefix)
+        public virtual async Task<TModel> RequestAsync(Uri prefix)
         {
             var bound = GetBoundUri(prefix);
             var client = new HttpClient();
@@ -27,7 +27,7 @@ namespace Github.Client.Query
             return JsonConvert.DeserializeObject<TModel>(json);
         }
 
-        private Uri GetBoundUri(Uri prefix)
+        protected Uri GetBoundUri(Uri prefix)
         {
             if (Params == null) throw new InvalidOperationException("Query Parameters have not been bound");
             try

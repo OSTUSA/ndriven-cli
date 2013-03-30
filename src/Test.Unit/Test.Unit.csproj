@@ -63,6 +63,7 @@
   <ItemGroup>
     <Compile Include="Github.Client\GithubClientTest.cs" />
     <Compile Include="Github.Client\Query\QueryBaseTest.cs" />
+    <Compile Include="Github.Domain\Model\TagCollectionTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SolutionTransform\Parsing\SolutionParserTest.cs" />
   </ItemGroup>

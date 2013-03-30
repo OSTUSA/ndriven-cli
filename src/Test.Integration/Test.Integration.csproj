@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Github.Client\GithubClientTest.cs" />
+    <Compile Include="Github.Client\Query\GetArchiveTest.cs" />
     <Compile Include="Github.Client\Query\GetTagCollectionTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

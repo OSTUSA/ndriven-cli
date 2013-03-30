@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\Commit.cs" />
+    <Compile Include="Model\Archive.cs" />
     <Compile Include="Model\IGithubModel.cs" />
     <Compile Include="Model\Tag.cs" />
     <Compile Include="Model\TagCollection.cs" />
