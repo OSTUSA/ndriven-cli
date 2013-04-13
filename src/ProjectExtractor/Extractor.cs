@@ -6,6 +6,12 @@ namespace ProjectExtractor
 {
     public class Extractor
     {
+        public static void Extract(string zipPath, string destination)
+        {
+            var extractor = new Extractor(zipPath);
+            extractor.ExtractToDestination(destination);
+        }
+
         public string ZipPath { get; private set; }
 
         public Extractor(string zipPath)
@@ -16,7 +22,7 @@ namespace ProjectExtractor
             ZipPath = zipPath;
         }
 
-        public void Extract(string path)
+        public void ExtractToDestination(string path)
         {
             ZipFile.ExtractToDirectory(ZipPath, path);
             var di = new DirectoryInfo(path);

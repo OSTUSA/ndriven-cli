@@ -1,6 +1,5 @@
 ﻿using System.IO;
 using System.Linq;
-using System.Security.AccessControl;
 using NUnit.Framework;
 using ProjectExtractor;
 
@@ -37,7 +36,7 @@ namespace Test.Unit.ProjectExtractor
         [Test]
         public void Extract_should_extract_folder_and_rename_it()
         {
-            Extractor.Extract(To);
+            Extractor.ExtractToDestination(To);
             Assert.True(Directory.Exists(To));
         }
 
