@@ -122,8 +122,8 @@
 </PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
-    <PreBuildEvent>IF EXIST  "$(SolutionDir)src\Test.Unit\bin\Debug\Fixtures\src" RD /S /Q "$(SolutionDir)src\Test.Unit\bin\Debug\Fixtures\src" 
-</PreBuildEvent>
+    <PreBuildEvent>IF EXIST  "$(SolutionDir)src\Test.Unit\bin\Debug\Fixtures\src" RD /S /Q "$(SolutionDir)src\Test.Unit\bin\Debug\Fixtures\src"
+IF EXIST  "$(SolutionDir)src\Test.Unit\bin\Debug\Fixtures\testlocation" RD /S /Q "$(SolutionDir)src\Test.Unit\bin\Debug\Fixtures\testlocation"</PreBuildEvent>
   </PropertyGroup>
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
