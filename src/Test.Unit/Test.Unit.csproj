@@ -66,10 +66,14 @@
     <Compile Include="Github.Client\GithubClientTest.cs" />
     <Compile Include="Github.Client\Query\QueryBaseTest.cs" />
     <Compile Include="Github.Domain\Model\TagCollectionTest.cs" />
+    <Compile Include="ProjectExtractor\ExtractorTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SolutionTransform\Parsing\SolutionParserTest.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Fixtures\ndriven-master.zip">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -80,6 +84,10 @@
     <ProjectReference Include="..\Github.Domain\Github.Domain.csproj">
       <Project>{AFB78A32-53D3-49FB-8738-68BD91EF777B}</Project>
       <Name>Github.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProjectExtractor\ProjectExtractor.csproj">
+      <Project>{EBFF241E-2426-4F56-8B48-0DE4334627FB}</Project>
+      <Name>ProjectExtractor</Name>
     </ProjectReference>
     <ProjectReference Include="..\SolutionTransform\SolutionTransform.csproj">
       <Project>{17C39EBB-5245-4993-9B26-587B5088EF6C}</Project>
