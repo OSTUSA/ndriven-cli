@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using CommandLine;
 using CommandLine.Text;
 
@@ -14,6 +15,9 @@ namespace Presentation.Console
         [Option('v', "version", DefaultValue = "latest", HelpText = "The version to fetch")]
         public string Version { get; set; }
 
+        [Option('d', "directory", HelpText = "The directory where the project is created")]
+        public string Directory { get; set; }
+
         [HelpOption]
         public string GetUsage()
         {
@@ -23,7 +27,7 @@ namespace Presentation.Console
                 AdditionalNewLineAfterOption = true,
                 AddDashesToOption = true
             };
-            help.AddPreOptionsLine("Usage: ndriven -s MySolution");
+            help.AddPreOptionsLine("Usage: ndriven -s MySolution -v 0.1.1 -d /path/to/location");
             help.AddOptions(this);
             return help;
         }

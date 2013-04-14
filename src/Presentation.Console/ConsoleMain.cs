@@ -21,6 +21,7 @@ namespace Presentation.Console
             {
                 Task<TagCollection> getTags = _client.QueryAsync<TagCollection>(new {owner = "OSTUSA", repo = "ndriven" });
                 ConsoleHelper.WriteUntilComplete(getTags, "Fetching versions");
+                var tag = getTags.Result.GetLatest();
             }
         }
     }
