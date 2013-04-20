@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>ndriven-cli</id>
+    <version>0.1.3</version>
+    <authors>scaturrob</authors>
+    <owners>scaturrob</owners>
+    <projectUrl>https://github.com/OSTUSA/ndriven-cli</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>NDriven is a baseline for developing domain driven applications in C#</description>
+    <copyright>Copyright 2013</copyright>
+    <tags>DDD</tags>
+  </metadata>
+</package>

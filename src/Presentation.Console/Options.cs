@@ -7,7 +7,7 @@ namespace Presentation.Console
 {
     public class Options
     {
-        private const string CliVersion = "0.1.0";
+        private const string CliVersion = "0.1.3";
 
         [Option('s', "solution", Required = true, HelpText = "The solution name")]
         public string SolutionName { get; set; }

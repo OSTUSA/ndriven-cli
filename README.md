@@ -1,7 +1,7 @@
 NDriven CLI
 ===========
 
-A command line tool for starting projects with the NDriven baseline.
+A command line tool for starting projects with the [NDriven](https://github.com/OSTUSA/ndriven) baseline.
 
 Usage
 -----
@@ -21,8 +21,13 @@ rename the solution file.
 
 Building
 --------
-The easiest way to build and use for now is Visual Studio. Just build and move the resulting ndriven.exe
-to a preferred location.
+The easiest way to build and use is NuGet. From NuGet.exe the following command should be used:
+
+```
+nuget install ndriven-cli -Version 0.1.3
+```
+
+The resulting ndriven.exe can be found in src\Presentation.Console\bin\Release
 
 Todo
 ----
