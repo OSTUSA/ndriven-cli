@@ -35,8 +35,7 @@ namespace Presentation.Console
         private static void RenameProject(string destPath, Options options)
         {
             var slnRoot = destPath + Path.DirectorySeparatorChar;
-            File.Copy(slnRoot + "NDriven.sln", slnRoot + options.SolutionName + ".sln");
-            File.Delete(slnRoot + "NDriven.sln");
+            File.Move(slnRoot + "NDriven.sln", slnRoot + options.SolutionName + ".sln");
             System.Console.WriteLine();
             System.Console.WriteLine(string.Format("Project {0} created", options.SolutionName));
         }

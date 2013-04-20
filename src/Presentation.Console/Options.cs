@@ -12,7 +12,7 @@ namespace Presentation.Console
         [Option('s', "solution", Required = true, HelpText = "The solution name")]
         public string SolutionName { get; set; }
 
-        [Option('d', "directory", HelpText = "The directory where the project is created")]
+        [Option('d', "directory", HelpText = "The directory to extract the project to")]
         public string Directory { get; set; }
 
         [HelpOption]
@@ -24,7 +24,7 @@ namespace Presentation.Console
                 AdditionalNewLineAfterOption = true,
                 AddDashesToOption = true
             };
-            help.AddPreOptionsLine("Usage: ndriven -s MySolution -v 0.1.1 -d /path/to/location");
+            help.AddPreOptionsLine("Usage: ndriven -s MySolution -d /path/to/solution/location");
             help.AddOptions(this);
             return help;
         }
