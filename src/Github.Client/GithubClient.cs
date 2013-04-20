@@ -19,9 +19,13 @@ namespace Github.Client
         public async Task<TModel> QueryAsync<TModel>(object prams) where TModel : IGithubModel, new()
         {
             var query = GetQuery<TModel>(prams);
-            if (query == null)
-                throw new QueryNotFoundException(String.Format("Query for {0} not found", typeof(TModel).Name));
-            return await query.RequestAsync(Uri);
+            return await GetResponseAsync<TModel>(query);
+        }
+
+        public async Task<TModel> QueryAsync<TModel>(Dictionary<string, string> prams) where TModel : IGithubModel, new()
+        {
+            var query = GetQuery<TModel>(prams);
+            return await GetResponseAsync<TModel>(query);
         }
 
         public dynamic GetQuery<TModel>(object prams) where TModel : IGithubModel, new()
@@ -49,6 +53,13 @@ namespace Github.Client
             var genericTypes = t.BaseType.GenericTypeArguments;
             if (genericTypes.Length <= 0) return false;
             return genericTypes.First() == model;
+        }
+
+        private async Task<TModel> GetResponseAsync<TModel>(dynamic query) where TModel : IGithubModel, new()
+        {
+            if (query == null)
+                throw new QueryNotFoundException(String.Format("Query for {0} not found", typeof(TModel).Name));
+            return await query.RequestAsync(Uri);
         }
     }
 }

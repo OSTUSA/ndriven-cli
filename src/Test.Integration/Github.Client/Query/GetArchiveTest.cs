@@ -35,7 +35,7 @@ namespace Test.Integration.Github.Client.Query
             var getArchive = Query.RequestAsync(Prefix);
             Assert.IsInstanceOf<Task<Archive>>(getArchive);
             var archive = await getArchive;
-            Assert.IsInstanceOf<Archive>(archive);
+            Assert.IsInstanceOf<Archive>(archive);            
         }
     }
 }

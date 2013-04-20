@@ -1,4 +1,4 @@
-﻿using System.Threading;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Github.Client;
 using Github.Domain.Model;
@@ -22,7 +22,21 @@ namespace Presentation.Console
                 Task<TagCollection> getTags = _client.QueryAsync<TagCollection>(new {owner = "OSTUSA", repo = "ndriven" });
                 ConsoleHelper.WriteUntilComplete(getTags, "Fetching versions");
                 var tag = getTags.Result.GetLatest();
+                var archiveParams = ArchiveParams(tag);
+                Task<Archive> getArchive = _client.QueryAsync<Archive>(archiveParams);
             }
+        }
+
+        private static Dictionary<string, string> ArchiveParams(Tag tag)
+        {
+            var archiveParams = new Dictionary<string, string>()
+                {
+                    {"owner", "OSTUSA"},
+                    {"repo", "ndriven"},
+                    {"format", "zipball"},
+                    {"ref", tag.name}
+                };
+            return archiveParams;
         }
     }
 }
