@@ -33,4 +33,3 @@ Todo
 ----
 * Support renaming of core projects
 * Support version specification
-* Create NuGet package
