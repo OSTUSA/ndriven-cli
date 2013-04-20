@@ -26,6 +26,6 @@ to a preferred location.
 
 Todo
 ----
-*Support renaming of core projects
-*Support version specification
-*Create NuGet package
+* Support renaming of core projects
+* Support version specification
+* Create NuGet package
