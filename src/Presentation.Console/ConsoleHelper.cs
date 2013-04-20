@@ -7,6 +7,7 @@ namespace Presentation.Console
     {
         public static void WriteUntilComplete(Task task, string msg, int numDots = 3, int delay = 100)
         {
+            System.Console.WriteLine();
             System.Console.Write(msg);
             var count = 0;
             while (task.IsCompleted == false)

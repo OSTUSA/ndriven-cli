@@ -12,9 +12,6 @@ namespace Presentation.Console
         [Option('s', "solution", Required = true, HelpText = "The solution name")]
         public string SolutionName { get; set; }
 
-        [Option('v', "version", DefaultValue = "latest", HelpText = "The version to fetch")]
-        public string Version { get; set; }
-
         [Option('d', "directory", HelpText = "The directory where the project is created")]
         public string Directory { get; set; }
 

@@ -64,6 +64,10 @@
       <Project>{AFB78A32-53D3-49FB-8738-68BD91EF777B}</Project>
       <Name>Github.Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ProjectExtractor\ProjectExtractor.csproj">
+      <Project>{EBFF241E-2426-4F56-8B48-0DE4334627FB}</Project>
+      <Name>ProjectExtractor</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />

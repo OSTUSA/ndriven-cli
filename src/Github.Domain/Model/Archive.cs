@@ -11,15 +11,19 @@ namespace Github.Domain.Model
 
         public async Task<bool> WriteToFile(string file)
         {
-            var stream = new FileStream(file, FileMode.CreateNew, FileAccess.Write, FileShare.None, bufferSize:4096, useAsync:true);            
-            try
+            using (
+                var stream = new FileStream(file, FileMode.CreateNew, FileAccess.Write, FileShare.None, bufferSize: 4096,
+                                            useAsync: true))
             {
-                await stream.WriteAsync(Data, 0, Data.Length);
-                return true;
-            }
-            catch (Exception e)
-            {
-                return false;
+                try
+                {
+                    await stream.WriteAsync(Data, 0, Data.Length);
+                    return true;
+                }
+                catch (Exception e)
+                {
+                    return false;
+                }
             }
         }
     }
