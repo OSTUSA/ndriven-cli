@@ -10,6 +10,8 @@ namespace Github.Client.Query
 {
     abstract public class QueryBase<TModel> : IQuery<TModel> where TModel : IGithubModel, new()
     {
+        public const string UserAgent = "NDrivenCli";
+
         public UriTemplate Template { get; private set; }
 
         public IDictionary<string, string> Params { get; set; }
@@ -23,6 +25,7 @@ namespace Github.Client.Query
         {
             var bound = GetBoundUri(prefix);
             var client = new HttpClient();
+            client.DefaultRequestHeaders.Add("User-Agent", UserAgent);
             var json = await client.GetStringAsync(bound.ToString());
             return JsonConvert.DeserializeObject<TModel>(json);
         }

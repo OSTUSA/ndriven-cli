@@ -17,6 +17,7 @@ namespace Github.Client.Query
         {
             var bound = GetBoundUri(prefix);
             var client = new WebClient();
+            client.Headers.Add("User-Agent", UserAgent);
             var archive = new Archive {Url = bound.ToString()};
             archive.Data = await client.DownloadDataTaskAsync(archive.Url);
             return archive;
