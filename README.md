@@ -24,7 +24,7 @@ Building
 The easiest way to build and use is NuGet. From NuGet.exe the following command should be used:
 
 ```
-nuget install ndriven-cli -Version 0.1.3
+nuget install ndriven-cli -Version 0.1.4
 ```
 
 The resulting ndriven.exe can be found in src\Presentation.Console\bin\Release

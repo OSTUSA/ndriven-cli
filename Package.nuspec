@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>ndriven-cli</id>
-    <version>0.1.3</version>
+    <version>0.1.4</version>
     <authors>scaturrob</authors>
     <owners>scaturrob</owners>
     <projectUrl>https://github.com/OSTUSA/ndriven-cli</projectUrl>
